@@ -18,7 +18,7 @@ void ft_manual(void *ptr)
     uint32_t    state;
     
     btn_auto.getValue(&state);
-    if (state == true)
+    if (state)
         digitalWrite(relay_one, LOW);
     else
         digitalWrite(relay_one, HIGH);
@@ -27,13 +27,19 @@ void ft_manual(void *ptr)
 /* Funcion de off-on rele automatico */
 void ft_automatic(void *ptr)
 {
+    DateTime now = rtc.now();
     uint32_t    state;
+    int hour = now.hour();
+    int minute = now.minute(); 
     
     btn_manu.getValue(&state);
-    if (state == true)
-        digitalWrite(relay_two, LOW);
+    if (state)
+    {
+        if (ft_hour(hour, minute))
+            digitalWrite(relay_one, LOW);
+    }    
     else
-        digitalWrite(relay_two, HIGH);
+        digitalWrite(relay_one, HIGH);
 }
 
 /* Funcines ciclos del riego*/
