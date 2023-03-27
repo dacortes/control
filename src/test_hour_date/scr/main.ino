@@ -15,11 +15,11 @@
 /* init pines*/
 void setup ()
 {
+    init_rtc();
     nexInit();
     init_pins();
     init_status();
     init_events();
-    rtc.setDateTime(dt);
 }
 
 void loop()

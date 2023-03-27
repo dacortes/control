@@ -12,6 +12,13 @@
 
 #include"../inc/hidroteg.h"
 
+void    init_rtc()
+{
+    rtc.begin();
+    if (!rtc.isrunning())
+        rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+}
+
 void    init_pins()
 {
     pinMode(relay_one, OUTPUT);
