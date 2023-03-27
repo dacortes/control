@@ -59,17 +59,14 @@ NexTouch *nex_listen_list[] =
 };
 
 /* Declaración de variables */
-int     day = 0;
-int     month = 0;
-int     year = 0;
-int     hour = 0;
-int     minute = 0;
-int     second = 0;
+extern int day;
+extern int month;
+extern int year;
+extern int hour;
+extern int minute;
+extern int second;
 /* ============================== FUNCIONES ==================================*/
 
-/* events.ino */
-void    ft_manual(void *ptr);
-void    ft_automatic(void *ptr);
 /* init.ino */
 void    init_rtc();
 void    init_pins();
@@ -79,7 +76,8 @@ void    init_date(int day, int month, int year, DateTime now);
 void    init_hour(int hour, int minute, int second, DateTime now);
 
 /* events.ino*/
-void    event_relay_one(void *ptr);
+void    ft_manual(void *ptr);
+void    ft_automatic(void *ptr);
 bool    ft_hour(int hourn, int minutes);
 int     ft_minutes(int minutes);
 
