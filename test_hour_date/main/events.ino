@@ -54,7 +54,13 @@ bool ft_hour(int hour)
 }
 
 /* Funcion rango de minutos*/
-bool ft_minutes(int minutes, int seconds)
+bool ft_minutes(int minutes, int seconds, int hour)
 {
-    
+    if (minutes >= 0 && minutes <= 9)
+        return (true);
+    else if (minutes >= 40 && minutes <= 49)
+        return (true);
+    else
+        return (false);
+    return (false);
 }
