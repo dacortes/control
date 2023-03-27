@@ -19,6 +19,11 @@
 # include <Wire.h>
 # include <RTClib.h>
 
+/* ============================== MACROS =====================================*/
+
+# define ON1 1
+# define ON2 2
+# define OFF 0
 /* Declaración de pines */
 # define relay_one 8
 # define relay_two 9
@@ -74,6 +79,7 @@ void    init_hour(int hour, int minute, int second, DateTime now);
 
 /* events.ino*/
 void    event_relay_one(void *ptr);
-bool    ft_hour(int hour);
+bool    ft_hour(int hourn, int minutes);
+int     ft_minutes(int minutes);
 
 #endif

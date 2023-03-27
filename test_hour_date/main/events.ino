@@ -38,15 +38,16 @@ void event_relay_two(void *ptr)
 
 /* Funcines ciclos del riego*/
 /* funcion de ciclo por horas*/
-bool ft_hour(int hour)
+bool ft_hour(int hour, int minutes)
 {
-    if ((hour >= 6 && hour <= 20))
+    if ((hour >= 6 && hour <= 20) && (ft_minutes(minutes) == ON1
+        || ft_minutes(minutes) == ON2))
         return (true);
-    else if (hour == 22)
+    else if (hour == 22 && ft_minutes(minutes) == ON1)
         return (true);
-    else if (hour == 2)
+    else if (hour == 2  && ft_minutes(minutes) == ON1)
         return (true);
-    else if (hour == 4)
+    else if (hour == 4  && ft_minutes(minutes) == ON1)
         return (true);
     else
         return (false);
@@ -54,13 +55,13 @@ bool ft_hour(int hour)
 }
 
 /* Funcion rango de minutos*/
-bool ft_minutes(int minutes, int seconds, int hour)
+int ft_minutes(int minutes)
 {
     if (minutes >= 0 && minutes <= 9)
-        return (true);
+        return (ON1);
     else if (minutes >= 40 && minutes <= 49)
-        return (true);
+        return (ON2);
     else
-        return (false);
-    return (false);
+        return (OFF);
+    return (OFF);
 }
