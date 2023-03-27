@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"hidroteg.h"
+#include"../inc/hidroteg.h"
 
 /* Funcion de off-on rele manual */
 void event_relay_one(void *ptr)
@@ -35,6 +35,7 @@ void event_relay_two(void *ptr)
     else
         digitalWrite(relay_two, HIGH);
 }
+
 /* Funcines ciclos del riego*/
 /* funcion de ciclo por horas*/
 bool ft_hour(int hour)

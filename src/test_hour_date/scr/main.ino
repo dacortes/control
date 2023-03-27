@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"hidroteg.h"
+#include"../inc/hidroteg.h"
 
 /* init pines*/
 void setup ()
