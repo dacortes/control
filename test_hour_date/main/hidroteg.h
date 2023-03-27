@@ -68,7 +68,8 @@ int     second = 0;
 /* ============================== FUNCIONES ==================================*/
 
 /* events.ino */
-void    event_relay_one(void *ptr);
+void    ft_manual(void *ptr);
+void    ft_automatic(void *ptr);
 /* init.ino */
 void    init_rtc();
 void    init_pins();

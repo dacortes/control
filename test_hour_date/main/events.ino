@@ -13,7 +13,7 @@
 #include"hidroteg.h"
 
 /* Funcion de off-on rele manual */
-void event_relay_one(void *ptr)
+void ft_manual(void *ptr)
 {
     uint32_t    state;
     
@@ -25,7 +25,7 @@ void event_relay_one(void *ptr)
 }
 
 /* Funcion de off-on rele automatico */
-void event_relay_two(void *ptr)
+void ft_automatic(void *ptr)
 {
     uint32_t    state;
     

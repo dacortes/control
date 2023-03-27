@@ -33,7 +33,8 @@ void    init_status()
 
 void    init_events()
 {
-    btn_auto.attachPop(event_relay_one, relay_one);
+    btn_auto.attachPop(ft_automatic, &btn_auto);
+    btn_manu.attachPop(ft_manual, &btn_manu);
 }
 
 void    init_date(int day, int month, int year, DateTime now)
