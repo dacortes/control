@@ -15,6 +15,7 @@
 /* init pines*/
 void setup ()
 {
+    ds18b20.begin();
     init_rtc();
     nexInit();
     init_pins();
@@ -27,5 +28,6 @@ void loop()
   DateTime now = rtc.now();
   init_date(day, month, year, now);
   init_hour(hour, minute, second, now);
+  init_temperature(&temperature);
   nexLoop(nex_listen_list);
 }

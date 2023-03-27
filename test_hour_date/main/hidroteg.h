@@ -27,7 +27,12 @@
 /* Declaración de pines */
 # define relay_one 8
 # define relay_two 9
+# define sn_temperature 4
 
+/* ============================== SENSOR_TEMPERATURE =========================*/
+
+OneWire communication (sn_temperature);
+DallasTemperature ds18b20 (&communication);
 /* Configurar :año- mes- dia- hora- minutos- segundo */
 /*DateTime dt(2021, 1, 6,  15, 11, 0, 0);*/
 RTC_DS1307 rtc;
@@ -65,6 +70,7 @@ int year = 0;
 int hour = 0;
 int minute = 0;
 int second = 0;
+int temperature = 0;
 /* ============================== FUNCIONES ==================================*/
 
 /* init.ino */
@@ -72,6 +78,7 @@ void    init_rtc();
 void    init_pins();
 void    init_status();
 void    init_events();
+void    init_temperature(int *temperature);
 void    init_date(int day, int month, int year, DateTime now);
 void    init_hour(int hour, int minute, int second, DateTime now);
 

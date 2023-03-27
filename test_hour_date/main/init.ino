@@ -58,3 +58,9 @@ void    init_hour(int hour, int minute, int second, DateTime now)
     n_minu.setValue(minute);
     n_seco.setValue(second);
 }
+
+void    init_temperature(int *temperature)
+{
+    ds18b20.requestTemperatures();
+    *temperature = ds18b20.getTempCByIndex(0);
+}
