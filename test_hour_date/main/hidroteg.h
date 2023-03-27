@@ -59,12 +59,12 @@ NexTouch *nex_listen_list[] =
 };
 
 /* Declaración de variables */
-extern int day;
-extern int month;
-extern int year;
-extern int hour;
-extern int minute;
-extern int second;
+int day = 0;
+int month = 0;
+int year = 0;
+int hour = 0;
+int minute = 0;
+int second = 0;
 /* ============================== FUNCIONES ==================================*/
 
 /* init.ino */
