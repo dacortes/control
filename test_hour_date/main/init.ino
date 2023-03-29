@@ -12,12 +12,11 @@
 
 #include"hidroteg.h"
 
-void    init_rtc()
+/*void    init_rtc()
 {
     rtc.begin();
-    if (!rtc.isrunning())
-        rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-}
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+}*/
 
 void    init_pins()
 {
@@ -37,12 +36,11 @@ void    init_events()
     btn_manu.attachPop(ft_manual, &btn_manu);
 }
 
-void    init_date(int day, int month, int year, DateTime now)
+/*void    init_date(int day, int month, int year, DateTime now)
 {
     day = now.day();
     month = now.month();
     year = now.year();
-    /* envio de datos */
     n_day.setValue(day);
     n_month.setValue(month);
     n_year.setValue(year);
@@ -53,7 +51,6 @@ void    init_hour(int hour, int minute, int second, DateTime now)
     hour = now.hour();
     minute = now.minute();
     second = now.second();
-    /* envio de datos */
     n_hour.setValue(hour);
     n_minu.setValue(minute);
     n_seco.setValue(second);
@@ -63,4 +60,4 @@ void    init_temperature(int *temperature)
 {
     ds18b20.requestTemperatures();
     *temperature = ds18b20.getTempCByIndex(0);
-}
+}*/

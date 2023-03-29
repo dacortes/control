@@ -17,7 +17,8 @@
 # include <OneWire.h>
 # include <DallasTemperature.h>
 # include <Wire.h>
-# include <RTClib.h>
+//# include <RTClib.h>
+# include <Sodaq_DS3231.h>
 
 /* ============================== MACROS =====================================*/
 
@@ -35,7 +36,7 @@ OneWire communication (sn_temperature);
 DallasTemperature ds18b20 (&communication);
 /* Configurar :año- mes- dia- hora- minutos- segundo */
 /*DateTime dt(2021, 1, 6,  15, 11, 0, 0);*/
-RTC_DS1307 rtc;
+//RTC_DS3231 rtc;
 /* Declaración de los objetos a utilizar [pagina id:0, componente id:1,
 nombrecomponente: "obj_name"]*/
 

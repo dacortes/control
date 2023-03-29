@@ -13,7 +13,7 @@
 #include"hidroteg.h"
 
 /* init pines*/
-void setup ()
+/*void setup ()
 {
     ds18b20.begin();
     init_rtc();
@@ -30,4 +30,28 @@ void loop()
   init_hour(hour, minute, second, now);
   init_temperature(&temperature);
   nexLoop(nex_listen_list);
+}*/
+DateTime dt(2021, 1, 6,  15, 11, 0, 0);
+void setup () {
+  Serial.begin(9600);
+  rtc.setDateTime(dt);
+}
+
+void loop () {
+  DateTime now = rtc.now();
+
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.print(now.date(), DEC);
+  Serial.print(' ');
+  Serial.print(now.hour(), DEC);
+  Serial.print(':');
+  Serial.print(now.minute(), DEC);
+  Serial.print(':');
+  Serial.print(now.second(), DEC);
+  Serial.println();
+
+  delay(1000);
 }
