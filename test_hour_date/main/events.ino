@@ -51,6 +51,8 @@ bool ft_hour(int hour, int minutes)
         return (true);
     else if (hour == 22 && ft_minutes(minutes) == ON1)
         return (true);
+    else if (hour == 0  && ft_minutes(minutes) == ON1)
+        return (true);
     else if (hour == 2  && ft_minutes(minutes) == ON1)
         return (true);
     else if (hour == 4  && ft_minutes(minutes) == ON1)
