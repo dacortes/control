@@ -45,9 +45,10 @@ NexTouch *nex_listen_list[] =
   NULL
 };
 void setup() {
+  rtc.begin();
   nexInit();
   Serial.begin(9600);
-//rtc.setDateTime(dt);
+  //rtc.setDateTime(dt);
   ds18b20.begin();
   pinMode(BLechugas,OUTPUT);
   pinMode(BTomate,OUTPUT);
