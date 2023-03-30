@@ -76,7 +76,7 @@ NexTouch *nex_listen_list[] =
 };
 // ================================= FUNTIONS =============================== //
 
-void	init_pin_mode();
+void    init_pin_mode();
 void    print_temp();
 void    print_date();
 void    print_temp_dig();

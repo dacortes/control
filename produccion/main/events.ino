@@ -121,16 +121,20 @@ static bool ft_hour(int hour, int minutes)
     return (false);
 }
 
-void    ft_irrigation()
+void ft_irrigation()
 {
     DateTime now = rtc.now();
-    int hora    =now.hour();
-    int minuto  =now.minute();
+    int hora    = now.hour();
+    int minuto  = now.minute();
     int segundo = now.second();
 
-    if (ft_hour(hora, minuto))
-        digitalWrite(BLechugas,LOW);
-    else
-        digitalWrite(BLechugas,HIGH);
-}
+    static bool pinState = HIGH; // variable para almacenar el estado del pin
+    bool newPinState = ft_hour(hora, minuto) ? LOW : HIGH; // determinar el nuevo estado del pin
 
+    if (newPinState != pinState) 
+    { 
+        // verificar si es necesario cambiar el estado del pin
+        digitalWrite(BLechugas, newPinState); // cambiar el estado del pin
+        pinState = newPinState; // actualizar el estado del pin
+    }
+}

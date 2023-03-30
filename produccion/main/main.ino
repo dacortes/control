@@ -25,13 +25,12 @@ void setup ()
 void loop()
 {
     tiempoX = millis();
-    print_temp();
+    //print_temp();
     print_date();
-    print_temp_dig();
-    switch_relay();
-    automatic();
-    if (Estado)
+    //print_temp_dig();
+    if (Estado == 1)
         ft_irrigation();
+    nexLoop(nex_listen_list);
     if (tiempoX == 1000)
-        nexLoop(nex_listen_list);
+        ;
 }
