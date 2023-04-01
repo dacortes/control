@@ -23,7 +23,7 @@
 
 #define ledAuto 12
 //Bombas 
-#define BLechugas 10
+#define BLechugas 3
 #define Rele 8
 #define Rele2 9
 //Ventiladores
@@ -39,7 +39,7 @@
 
 // ================================= COMPONENTS ============================= //
 
-//DateTime dt(2023, 3, 29,  18, 35, 0, 0);//Configurar :año- mes- dia- hora- minutos- segundo
+DateTime dt(2023, 3, 29,  7, 39, 50, 0);//Configurar :año- mes- dia- hora- minutos- segundo
 OneWire comuniacion(STemperatureD);
 DallasTemperature ds18b20(&comuniacion);
 

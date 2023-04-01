@@ -16,7 +16,7 @@ void setup ()
 {
     nexInit();
     rtc.begin();
-    //rtc.setDateTime(dt);
+    rtc.setDateTime(dt);
     Serial.begin(9600);
     ds18b20.begin();
     init_pin_mode();
@@ -28,6 +28,8 @@ void loop()
     //print_temp();
     print_date();
     //print_temp_dig();
+    automatic();
+    switch_relay();
     if (Estado == 1)
         ft_irrigation();
     nexLoop(nex_listen_list);

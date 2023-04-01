@@ -29,5 +29,5 @@ void	init_pin_mode()
 	digitalWrite(Rele,HIGH);
 	digitalWrite(Rele2,HIGH);
 	Bomba1.attachPop(switch_relay);
-  	bAuto.attachPop(automatic);
+	bAuto.attachPop(automatic);
 }
