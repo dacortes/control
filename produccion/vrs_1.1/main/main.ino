@@ -37,7 +37,9 @@ NexTouch *nex_listen_list[] =
   &btn_manual,
   NULL
 };
-
+/*
+  cambio de fecha y hora
+*/
 DateTime dt(2023, 4, 3,  7, 39, 50, 0);
 bool automaticMode = false;
 
