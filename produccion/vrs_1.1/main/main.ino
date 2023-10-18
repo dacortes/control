@@ -62,30 +62,50 @@ void    ft_fan()
 
 void checkCycle(int hour, int minute)
 {
-  if (hour >= 6 && hour <= 18)
+  if ((hour == 6) || (hour == 11) || (hour == 16))
   {
-    if (minute >= 0 && minute <= 9 || minute >= 30 && minute <= 39)
+    if ((minute >= 0 && minute <= 9) || (minute >= 50 && minute <= 59))
       digitalWrite(relay, LOW);
     else
-    {
       digitalWrite(relay, HIGH);
-    }
   }
-  else if (hour == 20 || hour == 22 || hour == 2 || hour == 4)
+  else if ((hour == 21) || (hour == 24) || (hour == 3))
   {
-    if (minute >= 0 && minute <= 9)
-    {
+    if ((minute >= 0 && minute <= 9))
       digitalWrite(relay, LOW);
-    }
     else
-    {
       digitalWrite(relay, HIGH);
-    }
+  }
+  else if ((hour == 7) || (hour == 12) || (hour == 17))
+  {
+    if ((minute >= 40 && minute <= 49))
+      digitalWrite(relay, LOW);
+    else
+      digitalWrite(relay, HIGH);
+  }
+  else if ((hour == 8) || (hour == 13))
+  {
+    if ((minute >= 30 && minute <= 39))
+      digitalWrite(relay, LOW);
+    else
+      digitalWrite(relay, HIGH);
+  }
+  else if ((hour == 9) || (hour == 14))
+  {
+    if ((minute >= 20 && minute <= 29))
+      digitalWrite(relay, LOW);
+    else
+      digitalWrite(relay, HIGH);
+  }
+  else if ((hour == 10) || (hour == 15))
+  {
+    if ((minute >= 10 && minute <= 19))
+      digitalWrite(relay, LOW);
+    else
+      digitalWrite(relay, HIGH);
   }
   else
-  {
     digitalWrite(relay, HIGH);
-  }
 }
 
 void cycles()
