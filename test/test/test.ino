@@ -64,9 +64,7 @@ void checkCycle(int hour, int minute)
 {
   if (hour >= 6 && hour <= 18)
   {
-    int minutes_past_hour = (hour * 60) + minute - 370;
-
-    if (minutes_past_hour % 30 <= 9)
+    if (minute >= 0 && minute <= 9 || minute >= 30 && minute <= 39)
     {
       digitalWrite(relay, LOW);
     }
@@ -75,7 +73,7 @@ void checkCycle(int hour, int minute)
       digitalWrite(relay, HIGH);
     }
   }
-  else if (hour == 20 || hour == 22 || hour == 0 || hour == 2 || hour == 4)
+  else if (hour == 20 || hour == 22 || hour == 2 || hour == 4)
   {
     if (minute >= 0 && minute <= 9)
     {
