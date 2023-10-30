@@ -78,6 +78,13 @@ void checkCycle(int hour, int minute)
     else
       digitalWrite(relay, HIGH);
   }
+  if ((hour == 21) || (hour == 24) || (hour == 3))
+  {
+    if ((minute >= 20 && minute <= 29))
+      digitalWrite(relay, LOW);
+    else
+      digitalWrite(relay, HIGH);
+  }
 }
 
 void cycles()
