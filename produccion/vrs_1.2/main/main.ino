@@ -64,14 +64,14 @@ void    ft_fan()
 
 void checkCycle(int hour, int minute)
 {
-  if ((hour >= 6 && hour <= 15) && (hour % 2) == 0)
+  if ((hour >= 6 && hour <= 18) && (hour % 2) == 0)
   {
     if ((minute >= 0 && minute <= 9) || (minute >= 40 && minute <= 49))
       digitalWrite(relay, LOW);
     else
       digitalWrite(relay, HIGH);
   }
-  else if ((hour >= 6 && hour <= 15) && (hour % 2) != 0)
+  else if ((hour >= 6 && hour <= 18) && (hour % 2) != 0)
   {
     if ((minute >= 20 && minute <= 29))
       digitalWrite(relay, LOW);
@@ -80,7 +80,7 @@ void checkCycle(int hour, int minute)
   }
   if ((hour == 21) || (hour == 24) || (hour == 3))
   {
-    if ((minute >= 20 && minute <= 29))
+    if ((minute >= 0 && minute <= 9))
       digitalWrite(relay, LOW);
     else
       digitalWrite(relay, HIGH);
